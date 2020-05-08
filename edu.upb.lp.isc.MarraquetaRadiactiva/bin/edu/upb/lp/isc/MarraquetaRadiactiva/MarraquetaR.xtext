@@ -1,0 +1,9 @@
+grammar edu.upb.lp.isc.MarraquetaRadiactiva.MarraquetaR with org.eclipse.xtext.common.Terminals
+
+generate marraquetaR "http://www.upb.edu/lp/isc/MarraquetaRadiactiva/MarraquetaR"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

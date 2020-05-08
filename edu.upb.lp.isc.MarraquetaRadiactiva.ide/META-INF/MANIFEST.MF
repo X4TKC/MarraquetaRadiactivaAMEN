@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: edu.upb.lp.isc.MarraquetaRadiactiva.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: edu.upb.lp.isc.MarraquetaRadiactiva.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: edu.upb.lp.isc.MarraquetaRadiactiva.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: edu.upb.lp.isc.MarraquetaRadiactiva,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-10
