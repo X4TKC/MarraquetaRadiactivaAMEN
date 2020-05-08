@@ -6,7 +6,7 @@ Model:
 	greetings+=Greeting*;
 	
 Greeting:
-	'Hell No' name=ID '!';
+	'HellNo' name=ID '!';
 	
 	
 	
