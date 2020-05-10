@@ -1,0 +1,55 @@
+grammar edu.upb.lp.isc.ProyectoAMEN with org.eclipse.xtext.common.Terminals
+
+generate proyectoAMEN "http://www.upb.edu/lp/isc/ProyectoAMEN"
+
+
+MyRacketProgram:
+	("Definitions:"
+		defines+=Define+)?	
+	"Executions:"
+		executions+=Expression+
+;
+
+Define:
+	"(" "define" "(" name=ID params+=ID* ")" body=Expression ")"
+;
+
+Expression:
+	Type  | Function | FunctionCallExpression //|  Condition | Asignation
+;
+ 
+Type:
+	value //| Collections   
+;
+
+value:
+	IntExpression | BooleanExpression | StringExpression
+;
+
+IntExpression:
+	value=INT
+;
+
+BooleanExpression:
+	value = ("true"| "false") 
+;
+
+StringExpression:
+	value=STRING
+;
+
+Function:
+	IfExpression | ArithExpression
+;
+ArithExpression:
+	"(" op=("+"|"-"|"*"|"/") args+=Expression args+=Expression+ ")"
+;
+
+IfExpression:
+	"(" "if" "(" cond=Expression ")" then=Expression else=Expression ")"
+;
+
+//LINKING
+FunctionCallExpression:
+	"(" function=[Define] args+=Expression* ")" 
+;
