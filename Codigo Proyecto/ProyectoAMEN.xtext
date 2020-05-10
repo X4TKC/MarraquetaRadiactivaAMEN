@@ -19,28 +19,38 @@ Expression:
 ;
  
 Type:
-	value //| Collections   
+	Value | Collections   
 ;
 
-value:
+Value:
 	IntExpression | BooleanExpression | StringExpression
 ;
-
 IntExpression:
 	value=INT
 ;
-
 BooleanExpression:
 	value = ("true"| "false") 
 ;
-
 StringExpression:
 	value=STRING
 ;
-
 Function:
 	IfExpression | ArithExpression
 ;
+
+Collections:
+	List | Tuple //| Stack | Queue | Tuple
+;
+
+Tuple:
+	"(" "tuple" values+= Type")"
+;
+
+List:
+	"(" "list" values+=Type+ ")"
+;
+
+
 ArithExpression:
 	"(" op=("+"|"-"|"*"|"/") args+=Expression args+=Expression+ ")"
 ;
